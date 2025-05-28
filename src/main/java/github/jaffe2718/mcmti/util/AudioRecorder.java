@@ -22,7 +22,7 @@ import github.jaffe2718.mcmti.config.McmtiConfig;
  */
 public final class AudioRecorder {
     /** 音频格式配置：16kHz采样率，16位深度，单声道，有符号，小端序 */
-    private static final AudioFormat AUDIO_FORMAT = new AudioFormat(16000, 16, 1, true, false);
+    public static final AudioFormat AUDIO_FORMAT = new AudioFormat(16000, 16, 1, true, false);
     
     /** 单例实例 */
     private static AudioRecorder INSTANCE;

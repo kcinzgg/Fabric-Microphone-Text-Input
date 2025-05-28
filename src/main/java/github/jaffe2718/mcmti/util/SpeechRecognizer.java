@@ -20,6 +20,8 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 
+import static github.jaffe2718.mcmti.util.AudioRecorder.AUDIO_FORMAT;
+
 /**
  * 语音识别器类
  * 负责使用 Whisper 库进行语音识别
@@ -141,9 +143,8 @@ public final class SpeechRecognizer {
      * @return 识别结果文本
      */
     public static @NotNull String recognizeWithDouBao(byte[] audio) {
-        AudioFormat format = new AudioFormat(16000, 16, 1, true, false);
         ByteArrayInputStream bais = new ByteArrayInputStream(audio);
-        AudioInputStream ais = new AudioInputStream(bais, format, audio.length / format.getFrameSize());
+        AudioInputStream ais = new AudioInputStream(bais, AUDIO_FORMAT, audio.length / AUDIO_FORMAT.getFrameSize());
         return DBRecognizer.recognize(ais);
     }
 

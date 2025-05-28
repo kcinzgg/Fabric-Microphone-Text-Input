@@ -16,6 +16,8 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.text.Text;
 
+import javax.sound.sampled.AudioFormat;
+
 /**
  * 事件系统类
  * 负责处理模组的所有事件和状态管理
@@ -129,6 +131,7 @@ public abstract class EventSystem {
                                         player.networkHandler.sendChatMessage(McmtiConfig.prefix + result);
                                     }
                                 });
+                                AudioPlayer.playByteArray(audio);
                             } else if (vthread != null && vthread.isAlive()) {
                                 player.sendMessage(Text.translatable("message.mcmti.recognizing"), true);
                             }
