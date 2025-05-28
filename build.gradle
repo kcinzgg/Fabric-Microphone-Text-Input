@@ -49,10 +49,8 @@ dependencies {
     modImplementation "maven.modrinth:midnightlib:${midnightlib_version}"
 
     //
-    implementation include("io.github.givimad:whisper-jni:${whisper_jni_version}")
+//    implementation include("io.github.givimad:whisper-jni:${whisper_jni_version}")
 
-//    implementation(include('com.squareup.okhttp3:okhttp:4.12.0'))
-//    implementation(include('com.squareup.okhttp3:logging-interceptor:4.12.0'))
     implementation(include("com.squareup.okhttp3:okhttp:3.14.9"))
     implementation(include("com.squareup.okhttp3:logging-interceptor:3.14.9"))
     implementation(include("com.squareup.okio:okio:1.17.5"))

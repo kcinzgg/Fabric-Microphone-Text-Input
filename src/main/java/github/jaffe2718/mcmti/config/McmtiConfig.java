@@ -2,8 +2,8 @@ package github.jaffe2718.mcmti.config;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 import github.jaffe2718.mcmti.client.MicrophoneTextInput;
-import io.github.givimad.whisperjni.WhisperFullParams;
-import io.github.givimad.whisperjni.WhisperSamplingStrategy;
+//import io.github.givimad.whisperjni.WhisperFullParams;
+//import io.github.givimad.whisperjni.WhisperSamplingStrategy;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
@@ -264,49 +264,49 @@ public class McmtiConfig extends MidnightConfig {
     public static float grammarPenalty = 100f;
 
 
-    @Entry(category = "advanced")
-    @Condition(requiredOption = "advancedConfig")
-    public static WhisperSamplingStrategy whisperSamplingStrategy = WhisperSamplingStrategy.BEAN_SEARCH;
+//    @Entry(category = "advanced")
+//    @Condition(requiredOption = "advancedConfig")
+//    public static WhisperSamplingStrategy whisperSamplingStrategy = WhisperSamplingStrategy.BEAN_SEARCH;
 
 
-    public static @NotNull WhisperFullParams getParams() {
-        WhisperFullParams params;
-        if (advancedConfig) {
-            params = new WhisperFullParams(whisperSamplingStrategy);
-            params.nThreads = nThreads;
-            params.audioCtx = audioCtx;
-            params.nMaxTextCtx = nMaxTextCtx;
-            params.offsetMs = offsetMs;
-            params.temperature = temperature;
-            params.maxInitialTs = maxInitialTs;
-            params.lengthPenalty = lengthPenalty;
-            params.temperatureInc = temperatureInc;
-            params.entropyThold = entropyThold;
-            params.logprobThold = logprobThold;
-            params.noSpeechThold = noSpeechThold;
-            params.greedyBestOf = greedyBestOf;
-            params.beamSearchBeamSize = beamSearchBeamSize;
-            params.beamSearchPatience = beamSearchPatience;
-            params.grammarPenalty = grammarPenalty;
-            params.suppressNonSpeechTokens = suppressNonSpeechTokens;
-            params.suppressBlank = suppressBlank;
-            params.printTimestamps = printTimestamps;
-            params.printProgress = printProgress;
-            params.printRealtime = printRealtime;
-            params.printSpecial = printSpecial;
-            params.singleSegment = singleSegment;
-            params.initialPrompt = initialPrompt.isBlank() ? null : initialPrompt;
-            params.noContext = noContext;
-            params.translate = translate;
-            params.noTimestamps = noTimestamps;
-            params.detectLanguage = detectLanguage;
-            params.durationMs = durationMs;
-        } else {
-            params = new WhisperFullParams();
-            params.suppressBlank = true;
-            params.suppressNonSpeechTokens = true;
-        }
-        params.language = language;
-        return params;
-    }
+//    public static @NotNull WhisperFullParams getParams() {
+//        WhisperFullParams params;
+//        if (advancedConfig) {
+//            params = new WhisperFullParams(whisperSamplingStrategy);
+//            params.nThreads = nThreads;
+//            params.audioCtx = audioCtx;
+//            params.nMaxTextCtx = nMaxTextCtx;
+//            params.offsetMs = offsetMs;
+//            params.temperature = temperature;
+//            params.maxInitialTs = maxInitialTs;
+//            params.lengthPenalty = lengthPenalty;
+//            params.temperatureInc = temperatureInc;
+//            params.entropyThold = entropyThold;
+//            params.logprobThold = logprobThold;
+//            params.noSpeechThold = noSpeechThold;
+//            params.greedyBestOf = greedyBestOf;
+//            params.beamSearchBeamSize = beamSearchBeamSize;
+//            params.beamSearchPatience = beamSearchPatience;
+//            params.grammarPenalty = grammarPenalty;
+//            params.suppressNonSpeechTokens = suppressNonSpeechTokens;
+//            params.suppressBlank = suppressBlank;
+//            params.printTimestamps = printTimestamps;
+//            params.printProgress = printProgress;
+//            params.printRealtime = printRealtime;
+//            params.printSpecial = printSpecial;
+//            params.singleSegment = singleSegment;
+//            params.initialPrompt = initialPrompt.isBlank() ? null : initialPrompt;
+//            params.noContext = noContext;
+//            params.translate = translate;
+//            params.noTimestamps = noTimestamps;
+//            params.detectLanguage = detectLanguage;
+//            params.durationMs = durationMs;
+//        } else {
+//            params = new WhisperFullParams();
+//            params.suppressBlank = true;
+//            params.suppressNonSpeechTokens = true;
+//        }
+//        params.language = language;
+//        return params;
+//    }
 }

@@ -104,17 +104,17 @@ public abstract class EventSystem {
                         && SpeechRecognizer.instance() != null) {
                     // 根据不同模式处理语音识别
                     switch (McmtiConfig.mode) {
-                        case AUTO_SEND -> {
-                            // 自动发送模式：固定周期录音并发送
-                            float[] audio = AudioRecorder.recordCycle();
-                            Thread.ofVirtual().start(() -> {
-                                String result = SpeechRecognizer.recognize(audio);
-                                if (!result.isEmpty()) {
-                                    player.sendMessage(Text.translatable("message.mcmti.messageSent"), true);
-                                    player.networkHandler.sendChatMessage(McmtiConfig.prefix + result);
-                                }
-                            });
-                        }
+//                        case AUTO_SEND -> {
+//                            // 自动发送模式：固定周期录音并发送
+//                            float[] audio = AudioRecorder.recordCycle();
+//                            Thread.ofVirtual().start(() -> {
+//                                String result = SpeechRecognizer.recognize(audio);
+//                                if (!result.isEmpty()) {
+//                                    player.sendMessage(Text.translatable("message.mcmti.messageSent"), true);
+//                                    player.networkHandler.sendChatMessage(McmtiConfig.prefix + result);
+//                                }
+//                            });
+//                        }
                         case RELEASE_KEY_TO_SEND -> {
                             // 松开按键发送模式：持续录音直到按键释放
                             if (MicrophoneTextInput.RECOGNIZE_KEY.isPressed()) {
@@ -133,20 +133,20 @@ public abstract class EventSystem {
                                 player.sendMessage(Text.translatable("message.mcmti.recognizing"), true);
                             }
                         }
-                        case RELEASE_KEY_TO_INPUT -> {
-                            // 松开按键输入模式：持续录音直到按键释放，然后打开聊天框
-                            if (MicrophoneTextInput.RECOGNIZE_KEY.isPressed()) {
-                                float[] audio = AudioRecorder.record();
-                                vthread = Thread.ofVirtual().start(() -> {
-                                    String result = SpeechRecognizer.recognize(audio);
-                                    if (!result.isEmpty()) {
-                                        MinecraftClient.getInstance().setScreen(new ChatScreen(McmtiConfig.prefix + result));
-                                    }
-                                });
-                            } else if (vthread != null && vthread.isAlive()) {
-                                player.sendMessage(Text.translatable("message.mcmti.recognizing"), true);
-                            }
-                        }
+//                        case RELEASE_KEY_TO_INPUT -> {
+//                            // 松开按键输入模式：持续录音直到按键释放，然后打开聊天框
+//                            if (MicrophoneTextInput.RECOGNIZE_KEY.isPressed()) {
+//                                float[] audio = AudioRecorder.record();
+//                                vthread = Thread.ofVirtual().start(() -> {
+//                                    String result = SpeechRecognizer.recognize(audio);
+//                                    if (!result.isEmpty()) {
+//                                        MinecraftClient.getInstance().setScreen(new ChatScreen(McmtiConfig.prefix + result));
+//                                    }
+//                                });
+//                            } else if (vthread != null && vthread.isAlive()) {
+//                                player.sendMessage(Text.translatable("message.mcmti.recognizing"), true);
+//                            }
+//                        }
                     }
                 } else {
                     // 当条件不满足时，暂停线程以降低CPU使用率

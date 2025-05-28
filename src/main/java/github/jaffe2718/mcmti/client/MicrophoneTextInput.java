@@ -10,7 +10,7 @@ import github.jaffe2718.mcmti.config.McmtiConfig;
 import github.jaffe2718.mcmti.util.AudioRecorder;
 import github.jaffe2718.mcmti.util.EventSystem;
 import github.jaffe2718.mcmti.util.SpeechRecognizer;
-import io.github.givimad.whisperjni.WhisperJNI;
+//import io.github.givimad.whisperjni.WhisperJNI;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
@@ -59,15 +59,15 @@ public class MicrophoneTextInput implements ClientModInitializer {
         MidnightConfig.init(MOD_ID, McmtiConfig.class);
         advancedConfig = McmtiConfig.advancedConfig;
         
-        try {
+//        try {
             // 如果启用了高级配置且指定了自定义库目录，则设置系统属性
             if (McmtiConfig.advancedConfig && !McmtiConfig.whisperjniLibdir.isBlank()) {
                 System.setProperty("io.github.givimad.whisperjni.libdir", McmtiConfig.whisperjniLibdir);
             }
             // 加载 Whisper 库并设置日志级别
-            WhisperJNI.loadLibrary(McmtiConfig.whisperLogLevel::log);
-            WhisperJNI.setLibraryLogger(McmtiConfig.whisperLogLevel::log);
-        } catch (IOException ignored) {}
+//            WhisperJNI.loadLibrary(McmtiConfig.whisperLogLevel::log);
+//            WhisperJNI.setLibraryLogger(McmtiConfig.whisperLogLevel::log);
+//        } catch (IOException ignored) {}
         
         // 注册按键绑定
         KeyBindingHelper.registerKeyBinding(RECOGNIZE_KEY);
