@@ -9,11 +9,21 @@ import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 
+/**
+ * 高级配置警告屏幕
+ * 在用户启用高级配置选项时显示警告信息
+ * 提醒用户高级配置可能带来的风险
+ */
 @Environment(EnvType.CLIENT)
 public class AdvancedConfigWarningScreen extends ConfirmScreen {
-
+    /** 父级屏幕，用于返回操作 */
     private final Screen parent;
 
+    /**
+     * 构造函数
+     * 初始化警告屏幕的标题、内容和按钮
+     * @param parent 父级屏幕
+     */
     public AdvancedConfigWarningScreen(Screen parent) {
         super(AdvancedConfigWarningScreen::checkConfirmed,
                 Text.translatable("mcmti.gui.config.advanced.warn.title"),
@@ -34,6 +44,10 @@ public class AdvancedConfigWarningScreen extends ConfirmScreen {
         }
     }
 
+    /**
+     * 关闭屏幕
+     * 重写父类方法，确保返回父级屏幕
+     */
     @Override
     public void close() {
         if (this.client != null) {

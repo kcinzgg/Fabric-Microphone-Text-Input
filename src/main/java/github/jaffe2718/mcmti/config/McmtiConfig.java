@@ -58,7 +58,7 @@ public class McmtiConfig extends MidnightConfig {
     public static int recordBufferSize = 1024;    // unit: byte, default: 1024 bytes
 
     @Entry(category = "general")
-    public static String prefix = "⌈Speech Input⌋";
+    public static String prefix = "⌈Speech Input1123⌋";
 
     @Entry(category = "general")
     public static boolean encodingRepair = false;
