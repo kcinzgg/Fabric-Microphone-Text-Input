@@ -112,5 +112,24 @@
     "message.mcmti.recordingAudio": "§e音频录制中...",
     "message.mcmti.whisperModelLoadFailed": "§cWhisper模型加载失败",
     "modmenu.descriptionTranslation.mcmti": "Minecraft的语音识别聊天消息输入工具。",
-    "modmenu.nameTranslation.mcmti": "麦克风语音识别文本输入"
+    "modmenu.nameTranslation.mcmti": "麦克风语音识别文本输入",
+    "mcmti.midnightconfig.llmModel": "大语言模型选择",
+    "mcmti.midnightconfig.llmModel.tooltip": "请选择要使用的大语言模型（如豆包、OpenAI）",
+    "mcmti.midnightconfig.enum.LLMModel.DOUBAO": "豆包",
+    "mcmti.midnightconfig.enum.LLMModel.OPENAI": "OpenAI",
+
+    "mcmti.midnightconfig.voiceType": "声音",
+    "mcmti.midnightconfig.voiceType.tooltip": "请选择合成语音的类型",
+    "mcmti.midnightconfig.enum.VoiceType.BEIJING_XIAOYE": "北京小爷",
+    "mcmti.midnightconfig.enum.VoiceType.ROUMEINVYOU": "柔美女友",
+    "mcmti.midnightconfig.enum.VoiceType.MEILINVYOU": "魅力女友",
+    "mcmti.midnightconfig.enum.VoiceType.XIAOHE": "小何",
+    "mcmti.midnightconfig.enum.VoiceType.YANGGUANG_QINGNIAN": "阳光青年",
+
+    "mcmti.midnightconfig.emotion": "情感模式",
+    "mcmti.midnightconfig.emotion.tooltip": "请选择语音的情感模式",
+    "mcmti.midnightconfig.enum.Emotion.NEUTRAL": "中性",
+    "mcmti.midnightconfig.enum.Emotion.HAPPY": "开心",
+    "mcmti.midnightconfig.enum.Emotion.SAD": "悲伤",
+    "mcmti.midnightconfig.enum.Emotion.ANGRY": "生气"
 }

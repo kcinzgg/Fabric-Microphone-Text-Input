@@ -104,35 +104,35 @@ public final class AudioRecorder {
         return new float[0];
     }
 
+//    /**
+//     * 动态录音
+//     * 用于 RELEASE_KEY_TO_SEND 和 RELEASE_KEY_TO_INPUT 模式
+//     * 持续录音直到按键释放
+//     * @return 录制的音频数据，以浮点数组形式返回
+//     */
+//    public static float @NotNull [] record() {
+//        assert McmtiConfig.mode != McmtiConfig.Mode.AUTO_SEND;
+//        ByteArrayOutputStream dynamicBuffer = new ByteArrayOutputStream();
+//        byte[] chunk = new byte[McmtiConfig.recordBufferSize];
+//        INSTANCE.line.start();
+//        while (MicrophoneTextInput.RECOGNIZE_KEY.isPressed()) {
+//            int read = INSTANCE.line.read(chunk, 0, chunk.length);
+//            if (read > 0) {
+//                dynamicBuffer.write(chunk, 0, read);
+//            }
+//        }
+//        INSTANCE.line.stop();
+//        INSTANCE.line.flush();
+//        return toFloatArray(dynamicBuffer.toByteArray());
+//    }
     /**
      * 动态录音
      * 用于 RELEASE_KEY_TO_SEND 和 RELEASE_KEY_TO_INPUT 模式
      * 持续录音直到按键释放
      * @return 录制的音频数据，以浮点数组形式返回
      */
-    public static float @NotNull [] record() {
-        assert McmtiConfig.mode != McmtiConfig.Mode.AUTO_SEND;
-        ByteArrayOutputStream dynamicBuffer = new ByteArrayOutputStream();
-        byte[] chunk = new byte[McmtiConfig.recordBufferSize];
-        INSTANCE.line.start();
-        while (MicrophoneTextInput.RECOGNIZE_KEY.isPressed()) {
-            int read = INSTANCE.line.read(chunk, 0, chunk.length);
-            if (read > 0) {
-                dynamicBuffer.write(chunk, 0, read);
-            }
-        }
-        INSTANCE.line.stop();
-        INSTANCE.line.flush();
-        return toFloatArray(dynamicBuffer.toByteArray());
-    }
-    /**
-     * 动态录音
-     * 用于 RELEASE_KEY_TO_SEND 和 RELEASE_KEY_TO_INPUT 模式
-     * 持续录音直到按键释放
-     * @return 录制的音频数据，以浮点数组形式返回
-     */
-    public static byte @NotNull [] recordNew() {
-        assert McmtiConfig.mode != McmtiConfig.Mode.AUTO_SEND;
+    public static byte @NotNull [] record() {
+//        assert McmtiConfig.mode != McmtiConfig.Mode.AUTO_SEND;
         ByteArrayOutputStream dynamicBuffer = new ByteArrayOutputStream();
         byte[] chunk = new byte[McmtiConfig.recordBufferSize];
         INSTANCE.line.start();

@@ -26,7 +26,6 @@ def publish_changelog = {
     }
 }()
 
-
 repositories {
     mavenCentral()
     maven { url "https://api.modrinth.com/maven" }
@@ -40,7 +39,7 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-        // Fabric API. This is technically optional, but you probably want it anyway.
+    // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modApi "com.terraformersmc:modmenu:${project.modmenu_version}"
@@ -48,12 +47,14 @@ dependencies {
     // Thrid party mod libraries
     modImplementation "maven.modrinth:midnightlib:${midnightlib_version}"
 
-    //
-//    implementation include("io.github.givimad:whisper-jni:${whisper_jni_version}")
-
+    // OkHttp for WebSocket
     implementation(include("com.squareup.okhttp3:okhttp:3.14.9"))
     implementation(include("com.squareup.okhttp3:logging-interceptor:3.14.9"))
     implementation(include("com.squareup.okio:okio:1.17.5"))
+    implementation(include("org.java-websocket:Java-WebSocket:1.5.4"))
+
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
 
     implementation 'com.google.code.gson:gson:2.10.1'
 }

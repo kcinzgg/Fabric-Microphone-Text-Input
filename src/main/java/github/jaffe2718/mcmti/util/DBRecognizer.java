@@ -64,8 +64,13 @@ public class DBRecognizer {
     private static final OkHttpClient okHttpClient;
 
     static {
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS);
+        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(message -> {
+            // 只记录非错误级别的日志
+            if (message.contains("ERROR") || message.contains("Exception")) {
+                System.out.println("[OkHttp] " + message);
+            }
+        });
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
         okHttpClient = new OkHttpClient.Builder()
                 .pingInterval(30, TimeUnit.SECONDS)  // 保持连接活跃
                 .addInterceptor(loggingInterceptor)

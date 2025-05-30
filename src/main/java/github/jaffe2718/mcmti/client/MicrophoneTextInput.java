@@ -57,13 +57,13 @@ public class MicrophoneTextInput implements ClientModInitializer {
     public void onInitializeClient() {
         // 初始化配置系统
         MidnightConfig.init(MOD_ID, McmtiConfig.class);
-        advancedConfig = McmtiConfig.advancedConfig;
+//        advancedConfig = McmtiConfig.advancedConfig;
         
 //        try {
             // 如果启用了高级配置且指定了自定义库目录，则设置系统属性
-            if (McmtiConfig.advancedConfig && !McmtiConfig.whisperjniLibdir.isBlank()) {
-                System.setProperty("io.github.givimad.whisperjni.libdir", McmtiConfig.whisperjniLibdir);
-            }
+//            if (McmtiConfig.advancedConfig && !McmtiConfig.whisperjniLibdir.isBlank()) {
+//                System.setProperty("io.github.givimad.whisperjni.libdir", McmtiConfig.whisperjniLibdir);
+//            }
             // 加载 Whisper 库并设置日志级别
 //            WhisperJNI.loadLibrary(McmtiConfig.whisperLogLevel::log);
 //            WhisperJNI.setLibraryLogger(McmtiConfig.whisperLogLevel::log);

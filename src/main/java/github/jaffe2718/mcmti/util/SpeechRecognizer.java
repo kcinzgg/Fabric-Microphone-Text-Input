@@ -67,9 +67,9 @@ public final class SpeechRecognizer {
      */
     public static void init() {
         destroy();
-        modelPath = McmtiConfig.model;
-        MicrophoneTextInput.LOGGER.info("modelPath: {}", modelPath);
-        grammarPath = McmtiConfig.advancedConfig ? McmtiConfig.grammar : "";
+//        modelPath = McmtiConfig.model;
+//        MicrophoneTextInput.LOGGER.info("modelPath: {}", modelPath);
+//        grammarPath = McmtiConfig.advancedConfig ? McmtiConfig.grammar : "";
 
         if (INSTANCE == null) {
 //            try {
