@@ -124,12 +124,5 @@
     "mcmti.midnightconfig.enum.VoiceType.ROUMEINVYOU": "柔美女友",
     "mcmti.midnightconfig.enum.VoiceType.MEILINVYOU": "魅力女友",
     "mcmti.midnightconfig.enum.VoiceType.XIAOHE": "小何",
-    "mcmti.midnightconfig.enum.VoiceType.YANGGUANG_QINGNIAN": "阳光青年",
-
-    "mcmti.midnightconfig.emotion": "情感模式",
-    "mcmti.midnightconfig.emotion.tooltip": "请选择语音的情感模式",
-    "mcmti.midnightconfig.enum.Emotion.NEUTRAL": "中性",
-    "mcmti.midnightconfig.enum.Emotion.HAPPY": "开心",
-    "mcmti.midnightconfig.enum.Emotion.SAD": "悲伤",
-    "mcmti.midnightconfig.enum.Emotion.ANGRY": "生气"
+    "mcmti.midnightconfig.enum.VoiceType.YANGGUANG_QINGNIAN": "阳光青年"
 }

@@ -2,10 +2,21 @@ package github.jaffe2718.mcmti.util;
 
 import javax.sound.sampled.*;
 import java.io.*;
+import java.util.concurrent.CompletableFuture;
 
 import static github.jaffe2718.mcmti.util.AudioRecorder.AUDIO_FORMAT;
 
 public class AudioPlayer {
+
+    public static void play(byte[] audioBytes) {
+        CompletableFuture.runAsync(() -> {
+            try {
+                playByteArray(audioBytes); // 调用原有同步方法
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+    }
     public static void playByteArray(byte[] audioBytes) throws LineUnavailableException, IOException {
         try (
                 ByteArrayInputStream bais = new ByteArrayInputStream(audioBytes);

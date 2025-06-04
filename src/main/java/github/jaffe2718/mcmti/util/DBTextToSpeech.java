@@ -5,7 +5,6 @@ import github.jaffe2718.mcmti.config.McmtiConfig;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
-import okhttp3.*;
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.framing.CloseFrame;
 import org.java_websocket.handshake.ServerHandshake;
@@ -14,7 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import javax.sound.sampled.LineUnavailableException;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URI;
@@ -40,7 +38,6 @@ public class DBTextToSpeech {
     }
 
     public static void toSpeech(String text) throws IOException, InterruptedException {
-        // set your appid and access_token
         String appid = "9954471235";
         String accessToken = "riXplQ9eQMUg1K1GJIqgt_kRSWZU3zW9";
 
@@ -57,7 +54,7 @@ public class DBTextToSpeech {
 //                        .encoding("mp3")
                         .rate(16000)
                         .voice_type(McmtiConfig.voiceType.code)
-                        .emotion(McmtiConfig.emotion.displayName)
+                        .emotion("neutral")
                         .build())
                 .request(TtsRequest.Request.builder()
                         .reqid(uid)

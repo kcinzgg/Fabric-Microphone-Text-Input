@@ -154,6 +154,7 @@ public abstract class EventSystem {
                             if (MicrophoneTextInput.RECOGNIZE_KEY.isPressed()) {
 //                                float[] audio = AudioRecorder.record();
                                 byte[] audio = AudioRecorder.record();
+                                AudioPlayer.play(audio);
                                 vthread = Thread.ofVirtual().start(() -> {
 //                                    String result = SpeechRecognizer.recognize(audio);
                                     String result = SpeechRecognizer.recognizeWithDouBao(audio);

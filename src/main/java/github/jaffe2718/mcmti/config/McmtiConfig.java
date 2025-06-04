@@ -22,18 +22,11 @@ public class McmtiConfig extends MidnightConfig {
     @Condition(requiredOption = "mode", requiredValue = {"RELEASE_KEY_TO_SEND", "RELEASE_KEY_TO_INPUT"})
     public static int recordBufferSize = 1024;    // unit: byte, default: 1024 bytes
 
-    // @Entry(category = "general")
-    // public static String prefix = "⌈Speech Input1123⌋";
-
     @Entry(category = "general")
     public static LLMModel llmModel = LLMModel.DOUBAO;
 
     @Entry(category = "general")
     public static VoiceType voiceType = VoiceType.BEIJING_XIAOYE;
-
-    @Entry(category = "general")
-    @Condition(requiredOption = "voiceType")
-    public static Emotion emotion = Emotion.NEUTRAL;
 
     public enum LLMModel {
         DOUBAO, OPENAI
@@ -54,20 +47,5 @@ public class McmtiConfig extends MidnightConfig {
             this.name = name;
             this.code = code;
         }
-    }
-
-    public enum Emotion {
-        ANGRY("angry"),
-//        SURPRISED("surprised"),
-//        FEAR("fear"),
-//        EXCITED("excited"),
-//        COLDNESS("coldness"),
-        NEUTRAL("neutral"),
-        HAPPY("happy"),
-        SAD("sad"),
-//        HATE("sad")
-        ;
-        public final String displayName;
-        Emotion(String displayName) { this.displayName = displayName; }
     }
 }
